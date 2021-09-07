@@ -13,12 +13,13 @@ class Form extends Component{
     }
 
     handleChange(event){
+        console.log(event.target.value);
         this.setState({fname: event.target.value});
     }
     
     handleSubmit(event){
         console.log(this.state.fname)
-        alert('A name was submitted :' + this.state.fname);
+        alert('A first name was submitted :' + this.state.fname +'\n'+ 'A second name was submitted :' + this.state.lname);
         event.preventDefault();
     }
     
@@ -29,11 +30,15 @@ class Form extends Component{
 
 
                     <label for="fname">First name:</label><br></br>
-                    <input type="text" id="fname" name="fname" value={this.state.value} 
+                    <input type="text" id="fname" name="fname" value={this.state.fname} 
                     onChange = {this.handleChange}></input><br></br>
+                    {/*<label for="lname">Last name:</label><br></br>
+                    <input type="text" id="lname" name="lname" value={this.state.lname} onChange = {this.handleChange}></input>*/}
+
+                    <label for="lname">Last name:</label><br></br>
+                    <input type="text" id="lname" name="lname" value={this.state.lname} 
+                    onChange = {e => this.setState({lname : e.target.value})}></input>
                    
-                   {/*<label for="lname">Last name:</label><br></br>
-                    <input type="text" id="lname" name="lname" value="Doe"></input>*/}
 
                     <input type="submit" value="Submit" />
             </form>
