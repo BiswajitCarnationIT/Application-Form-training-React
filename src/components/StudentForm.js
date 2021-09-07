@@ -18,7 +18,7 @@ class Form extends Component{
     }
     
     handleSubmit(event){
-        console.log(this.state.fname)
+        console.log(this.state.lname)
         alert('A first name was submitted :' + this.state.fname +'\n'+ 'A second name was submitted :' + this.state.lname);
         event.preventDefault();
     }
