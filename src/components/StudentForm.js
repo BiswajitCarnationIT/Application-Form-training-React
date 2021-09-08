@@ -5,11 +5,14 @@ class Form extends Component{
         super(props);
         this.state = {
             fname: '',
-            lname: ''
+            lname: '',
+            gender: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onChangeValue = this.onChangeValue.bind(this);
+        
     }
 
     handleChange(event){
@@ -21,10 +24,20 @@ class Form extends Component{
             [event.target.name]:  event.target.value
           });
     }
+
+    onChangeValue(event) {
+        console.log(event.target.value);
+        this.setState({       //Spreed operator
+            ...this.state,
+            [event.target.name]:  event.target.value
+          });
+    }
     
     handleSubmit(event){
         console.log(this.state.lname)
-        alert('A first name was submitted :' + this.state.fname +'\n'+ 'A second name was submitted :' + this.state.lname);
+        alert('A first name was submitted :' + this.state.fname +'\n'
+        + 'A second name was submitted :' + this.state.lname 
+        +'\n'+ this.state.gender);
         event.preventDefault();
     }
     
@@ -43,6 +56,17 @@ class Form extends Component{
                     <label for="lname">Last name:</label><br></br>
                     <input type="text" id="lname" name="lname" value={this.state.lname} 
                     onChange = {e => this.setState({lname : e.target.value})}></input>
+
+                    {/*---- Radio Button------   */}
+
+                    <div onChange={this.onChangeValue}>
+                        <label htmlFor="gender">Gender:</label><br></br>
+                        <input type="radio" id="male" name="gender" value="Male"></input>
+                        <label htmlFor="html">Male</label><br></br>
+                        
+                        <input type="radio" id="female" name="gender" value="Female"></input>
+                        <label htmlFor="css">Female</label><br></br><br></br>
+                    </div>
                    
 
                     <input type="submit" value="Submit" />
