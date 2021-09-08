@@ -13,13 +13,9 @@ class Form extends Component{
     }
 
     handleChange(event){
-        console.log(event.target);  //*
-        //this.setState({event.target.name: event.target.name});
-        
-        this.setState({       //Spreed operator
-            ...this.state,
-            [event.target.name]:  event.target.value
-          });
+        console.log(event.target.value);
+        this.setState({fname: event.target.value1});
+        this.setState({lname: event.target.value2});
     }
     
     handleSubmit(event){
@@ -29,20 +25,22 @@ class Form extends Component{
     }
     
     render(){
-        console.log(this.state)
+        
         return (
             <form onSubmit ={this.handleSubmit}>
 
 
                     <label for="fname">First name:</label><br></br>
-                    <input type="text" id="fname" name="fname" value={this.state.fname} 
+                    <input type="text" id="fname" name="fname" value1={this.state.fname} 
                     onChange = {this.handleChange}></input><br></br>
-                    {/*<label for="lname">Last name:</label><br></br>
-                    <input type="text" id="lname" name="lname" value={this.state.lname} onChange = {this.handleChange}></input>*/}
+                    <label for="lname">Last name:</label><br></br>
+                    <input type="text" id="lname" name="lname" value2={this.state.lname} onChange = {this.handleChange}></input>
 
+                    {/*
                     <label for="lname">Last name:</label><br></br>
                     <input type="text" id="lname" name="lname" value={this.state.lname} 
                     onChange = {e => this.setState({lname : e.target.value})}></input>
+                    */}
                    
 
                     <input type="submit" value="Submit" />

@@ -11,17 +11,17 @@ class Form extends Component{
             gender:''
         };
 
-        this.handleChange = this.handleChange.bind(this);
+        //this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event){
+    /*handleChange(event){
         console.log(event.target.value);
         this.setState({fname: event.target.value});
-    }
+    }*/
     
     handleSubmit(event){
-       // console.log(this.state.fname)
+        console.log(this.state.fname)
         alert('first name  :' + this.state.fname +'\n' +'last name  :' + this.state.lname + '\n'
         + 'email name  :' + this.state.email + this.state.gender);
         event.preventDefault();
@@ -58,15 +58,15 @@ class Form extends Component{
 
                     
                     
-                    <label for="skill">Your Skill:</label><br></br>
+                    <label htmlFor="skill">Your Skill:</label><br></br>
                     <input type="checkbox" id="c" name="c" value="C"></input>
-                    <label for="skill1"> I know C</label><br></br>
+                    <label htmlFor="skill1"> I know C</label><br></br>
                     
                     <input type="checkbox" id="java" name="java" value="Java"></input>
-                    <label for="skill2"> I know Java</label><br></br>
+                    <label htmlFor="skill2"> I know Java</label><br></br>
                     
                     <input type="checkbox" id="vehicle3" name="JavaScript" value="JavaScript"></input>
-                    <label for="skill3"> I know JavaScript</label><br></br><br></br>
+                    <label htmlFor="skill3"> I know JavaScript</label><br></br><br></br>
                     
                     
                     
