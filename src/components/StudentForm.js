@@ -27,8 +27,8 @@ class Form extends Component{
 
     onChangeValue(event) {
         console.log(event.target.value);
-        this.setState({       //Spreed operator
-            ...this.state,
+        this.setState({       
+            ...this.state,    //Spreed operator
             [event.target.name]:  event.target.value
           });
     }

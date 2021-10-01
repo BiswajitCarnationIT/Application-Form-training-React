@@ -20,8 +20,8 @@ class Form extends Component{
         console.log(event.target);  //*
         //this.setState({event.target.name: event.target.name});
         
-        this.setState({       //Spreed operator
-            ...this.state,
+        this.setState({       
+            ...this.state,      //Spreed operator
             [event.target.name]:  event.target.value
           });
     }
